@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  box-shadow: 2px 2px 2px 1px rgba(9, 86, 105, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+.logo h3 {
+  color: rgb(1, 85, 141);
+}
+
+.search-box input {
+  width: 350px;
+  height: 36px;
+  font-size: 1.4rem;
+  padding-left: 5px;
+  border-radius: 7px;
+  box-shadow: 0 0 7px rgba(1, 85, 141, 0.664);
+  border: 0;
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.search-box button {
+  height: 38px;
+  width: 38px;
+  font-size: 1.4rem;
+  color: rgb(1, 85, 141);
+  border: 0;
+  box-shadow: 0 0 7px rgba(1, 85, 141, 0.664);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.main {
+  padding: 1rem;
+}
+
+.categories h3 {
+  color: rgb(1, 85, 141);
+  margin-bottom: 1.2rem;
+}
+
+.list-category {
+  list-style-type: none;
+}
+
+.item-category {
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.item-category:hover {
+  background-color: rgb(240, 232, 232);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 1;
+}
+
+.product-item {
+  width: 150px;
+  padding: 0.4rem;
+  box-shadow: 0 0 15px rgba(0, 1, 2, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.product-item:hover {
+  cursor: pointer;
+}
+
+.product-item h4 {
+  color: rgb(1, 85, 141);
+}
+
+.product-item span {
+  background-color: rgb(1, 85, 141);
+  color: white;
+  position: absolute;
+  z-index: 10000;
+  padding: 0.3rem;
+  position: absolute;
+  z-index: 10000;
+}
+
+.loader-container {
+  max-width: 70%;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+.loader-container .loader-header {
+  display: flex;
+  align-items: center;
+}
+.loader-header .img {
+  height: 75px;
+  width: 75px;
+  background: #b9b9b9;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.loader-header .details {
+  margin-left: 20px;
+}
+.details span {
+  display: block;
+  background: #b9b9b9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.details .name {
+  height: 15px;
+  width: 100px;
+}
+.details .about {
+  height: 13px;
+  width: 150px;
+  margin-top: 10px;
+}
+.loader-container .loader-desc {
+  margin: 25px 0;
+}
+.loader-desc .line {
+  background: #b9b9b9;
+  border-radius: 10px;
+  height: 13px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+.loader-desc .line-1 {
+  width: calc(100% - 15%);
+}
+.loader-desc .line-3 {
+  width: calc(100% - 40%);
+}
+.loader-container .btns {
+  display: flex;
+}
+.loader-container .btns .btn {
+  height: 45px;
+  width: 100%;
+  background: #b9b9b9;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+.btns .btn-1 {
+  margin-right: 8px;
+}
+.btns .btn-2 {
+  margin-left: 8px;
+}
+.header .img::before,
+.details span::before,
+.loader-desc .line::before,
+.btns .btn::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    #b9b9b9 0%,
+    #d7dae6 20%,
+    #b2b2b4 40%,
+    #c3c3c4 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: shimmer 1s linear infinite;
+}
+.header .img::before {
+  background-size: 650px 600px;
+}
+.details span::before {
+  animation-delay: 0.2s;
+}
+.btns .btn-2::before {
+  animation-delay: 0.2s;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+  100% {
+    background-position: 450px 0;
+  }
+}
+
+.hideorshow {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.main-details {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-details {
+  padding: 1rem;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(6, 59, 68, 0.89);
+}
+
+.image-container img {
+  width: 100%;
+  height: 400px;
+}
+.product-details-container{
+  height: 400px;
+  overflow: scroll;
+}
+
+.product-details-container h4 {
+    font-weight: 700px;
+}
+
+.product-details-container h2 {
+     color: rgb(1, 85, 141);
+}
+
+.btn-buy {
+    box-shadow: 0 0 2px rgba(6, 59, 68, 0.89);
+    background-color: rgb(1, 85, 141);
+    color: #FFF;
+    border: none;
+    border-radius: 20px;
+    padding: 0 1.2rem;
+    height: 35px;
+}
+
+.btn-cart {
+    box-shadow: 0 0 2px rgba(6, 59, 68, 0.89);
+    color: rgb(1, 85, 141);
+    background-color: #FFF;
+    border: 1px solid rgb(1, 85, 141);
+    border-radius: 20px;
+    padding: 0 1.2rem;
+    height: 35px;
+}
