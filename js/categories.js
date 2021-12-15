@@ -1,10 +1,11 @@
-const API = "https://fakestoreapi.com/products/";
+
 const API_CATEGORIES = "https://fakestoreapi.com/products/categories";
 const category=sessionStorage.getItem("category");
+const CATEGORIES_API = "https://fakestoreapi.com/products/category/"+category;
 
 window.onerror = () => true;
 async function getData() {
-  let data = await (await fetch(API)).json();
+  let data = await (await fetch(CATEGORIES_API)).json();
   return await data;
 }
 
