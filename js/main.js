@@ -1,6 +1,7 @@
 const API = "https://fakestoreapi.com/products/";
 const API_CATEGORIES = "https://fakestoreapi.com/products/categories";
 const category=sessionStorage.getItem("category");
+let productList=[];
 
 window.onerror = () => true;
 async function getData() {
@@ -33,7 +34,16 @@ getCategories().then(function (categories) {
 getData()
   .then((products) => {
     document.getElementById("loader").classList.add("hideorshow");
-    products.forEach(function (product) {
+    productList=products;
+    setDataToviews();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+  function setDataToviews(){
+    document.getElementById("products-container").innerHTML="";
+    productList.forEach(function (product) {
       const productItem = document.createElement("div");
       productItem.classList.add(...["card", "product-item"]);
       const productImg = document.createElement("img");
@@ -58,7 +68,16 @@ getData()
         sessionStorage.setItem("product",JSON.stringify(product));
       });
     });
-  })
-  .catch((error) => {
-    console.log(error);
+  }
+
+  document.getElementById("btnsearch").addEventListener("click",function(){
+    const query=document.getElementById("search").value;
+    console.log(query)
+    const filteredarray=productList.filter(function(product){
+      return product.title.toLowerCase().includes(query.toLowerCase());
+    })
+    console.log(filteredarray)
+    productList=filteredarray;
+    setDataToviews();
   });
+document
